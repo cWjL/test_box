@@ -1,0 +1,98 @@
+Using VPS:
+
+	AWS:
+		-https://lightsail.aws.amazon.com/
+			-Create an Instance
+				-at least 1 GB of RAM
+				-at least 50 GB storage
+			-Linux/Unix
+			-OS Only -> Ubuntu
+			-Download Cert
+			-chmod 600 cert
+			-ssh -i cert ubuntu@[ip]
+			
+Linux host:
+	
+	Install PenTesters Framwork:
+	
+		-sudo su -
+		-apt-get update
+		-apt-get install python
+		-git clone https://github.com/trustedsec/ptf /opt/ptf
+		-cd /opt/ptf && ./ptf
+		-use modules/exploitation/install_update_all
+		-use modules/intelligence-gathering/install_update_all
+		-use modules/post-exploitation/install_update_all
+		-use modules/powershell/install_update_all
+		-use modules/vulnerability-analysis/install_update_all
+		-cd /pentest	
+		
+	Install Powershell:
+	
+		-apt-get install libunwind8
+		-wget http://security.debian.org/debiansecurity/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb7u3_amd64.deb
+		-dpkg -i libssl1.0.0_1.0.1t-1+deb7u3_amd64.deb
+		-wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu55_55.1-
+7ubuntu0.3_amd64.deb
+		-dpkg -i libicu55_55.1-7ubuntu0.3_amd64.deb
+		-wget
+https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell_6.0.2-
+1.ubuntu.16.04_amd64.deb
+		-dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb	
+		
+	Install PowerShell Empire:
+	
+		-git clone https://github.com/EmpireProject/Empire /opt/
+		
+	Install dnscat2:
+	
+		-sudo su -
+		-apt-get update
+		-apt-get install ruby-dev
+		-git clone https://github.com/iagox86/dnscat2.git
+		
+		Build and setup the server:
+		
+			-cd dnscat2/server/
+			-apt-get install gcc make
+			-gem install bundler
+			-bundle install
+			-Test to make sure it works: ruby ./dnscat2.rb
+				-you may need to kill whatever is using port 53 (systemd-resolved for example)
+				
+		Compile the client:
+		
+			-cd /opt/dnscat2/client
+			-make
+			
+	Install p0wnedShell:
+	
+		-git clone https://github.com/Cn33liz/p0wnedShell /opt/
+		
+	Install Pupy Shell:
+	
+		-git clone https://github.com/n1nj4sec/pupy /opt/
+		
+	Install PoshC2:
+	
+		-git clone https://github.com/nettitude/PoshC2 /opt/
+			
+	Install Merlin:
+	
+		-git clone https://github.com/Ne0nd0g/merlin /opt/
+		
+	Install Nishang:
+	
+		-git clone https://github.com/samratashok/nishang /opt/
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
